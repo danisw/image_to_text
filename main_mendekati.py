@@ -15,8 +15,9 @@ cv.waitKey(0)
 
 
 print("reading threshold")
-#tresholding is a method in image processing to separate background with object, using tresh binary because anything below treashold will be chosen as black
-ret, image = cv.threshold(initial_image, 98, 255, cv.THRESH_BINARY)
+#tresholding is a method in image processing to separate background with object, 
+#using tresh binary because anything below treashold will be chosen as black
+ret, image = cv.threshold(initial_image, 115, 255, cv.THRESH_BINARY)
 cv.imshow('', image)
 cv.waitKey(0)
 
@@ -46,5 +47,9 @@ for i in range(0, len(results["text"])):
 
 cv.imshow('', unchanged_image)
 cv.waitKey(0)
+
+# Perform text extraction
+data = pytesseract.image_to_string(image, lang='eng', config='--psm 6')
+print(data)
 
 
