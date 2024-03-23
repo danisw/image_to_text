@@ -51,5 +51,7 @@ cv.waitKey(0)
 # Perform text extraction
 data = pytesseract.image_to_string(image, lang='eng', config='--psm 6')
 print(data)
-
+#detect words => separate trash alphabet from words
+#detect the serial number
+#get name, serial number 
 
